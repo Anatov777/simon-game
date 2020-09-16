@@ -11,7 +11,7 @@
         <span v-show="playing">{{ showScore }}</span>
     </div>
     <div class="game__mode">
-      <p>Mode: </p>
+      <p>Mode</p>
       <button :class="{active: activeBtn === 'btn1'}" @click="gameMode = 'easy'; activeBtn = 'btn1'">Easy</button>
       <button :class="{active: activeBtn === 'btn2'}" @click="gameMode = 'normal'; activeBtn = 'btn2'">Normal</button>
       <button :class="{active: activeBtn === 'btn3'}" @click="gameMode = 'hard'; activeBtn = 'btn3'">Hard</button>
