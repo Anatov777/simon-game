@@ -36,10 +36,12 @@ export default {
       sequenceInterval: null,
       playerSequence: [],
       sounds: {
-        1: "sounds/error.mp3",
+        1: "sounds/plip.mp3",
         2: "sounds/govilive.mp3",
-        3: "sounds/plip.mp3",
-        4: "sounds/sswitch1.mp3"
+        3: "sounds/error.mp3",
+        4: "sounds/sswitch1.mp3",
+        5: "sounds/haa.mp3",
+        6: "sounds/good.mp3",
       },
       isLit: {
         1: false,
@@ -67,6 +69,7 @@ export default {
     startGame() {
       this.playing = true;
       this.sequence = [];
+      this.playSound(5);
       this.playerSequence = [];
       this.centerButton = "RESET";
       this.isWon = false;
@@ -102,8 +105,9 @@ export default {
         this.playerSequence = [];
         this.score++;
         // if win condition, show win, dont continue.
-        if (this.score === 3) {
+        if (this.score === 5) {
           this.centerButton = "Winner!";
+          setTimeout(() => this.playSound(6), 600);
           this.isClickable = false;
           this.isWon = true;
         } else {
